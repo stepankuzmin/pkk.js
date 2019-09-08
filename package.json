@@ -1,0 +1,56 @@
+{
+  "name": "pkk",
+  "version": "0.1.0",
+  "description": "JavaScript Client for Public Cadastral Map (pkk5.rosreestr.ru)",
+  "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.com)",
+  "license": "BSD-2-Clause",
+  "homepage": "https://github.com/stepankuzmin/pkk.js#readme",
+  "bugs": {
+    "url": "https://github.com/stepankuzmin/pkk.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stepankuzmin/pkk.js.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "cz": "git-cz",
+    "lint": "eslint src",
+    "doc": "npm run doc:api && npm run doc:site",
+    "doc:api": "documentation readme src/index.js --section=API",
+    "doc:site": "documentation build src/index.js -f html -o docs",
+    "test": "jest",
+    "deploy": "gh-pages -d docs",
+    "postpublish": "npm run build && npm run doc && npm run deploy"
+  },
+  "dependencies": {
+    "axios": "0.19.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.6.0",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/preset-env": "7.6.0",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "24.9.0",
+    "commitizen": "4.0.3",
+    "cz-conventional-changelog": "3.0.2",
+    "documentation": "12.1.1",
+    "eslint": "6.3.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-plugin-import": "2.18.2",
+    "gh-pages": "2.1.1",
+    "jest": "24.9.0",
+    "standard-version": "7.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "keywords": [
+    "rosreestr",
+    "cadastre",
+    "pkk",
+    "pkk5"
+  ]
+}
