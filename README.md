@@ -88,7 +88,7 @@ Query PKK feature info
 pkk.getFeatureInfo('77:1:1013:4985');
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;FeaturesResponse>** response
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Feature](#feature)>** response
 
 ### Feature
 
@@ -107,7 +107,7 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
   - `extent.xmin` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
   - `extent.ymax` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
   - `extent.ymin` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
-- `sort` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+- `sort` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?**
 - `type` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
 
 ### FeatureAttrs
@@ -118,6 +118,30 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 #### Properties
 
-- `address` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+- `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** feature id
 - `cn` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** cadastral number
-- `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+- `address` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+- `adate` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `anno_text` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `area_type` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `area_unit` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `area_value` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?**
+- `cad_cost` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?**
+- `cad_eng_dat` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?**
+- `cad_record_date` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `cad_unit` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `category_type` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `date_cost` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `date_create` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `kvartal` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `kvartal_cn` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `okrug` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `okrug_cn` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `pubdate` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `rayon` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `rayon_cn` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `reg` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?**
+- `rights_reg` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?**
+- `statecd` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `util_by_doc` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+- `util_code` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**

@@ -50,7 +50,7 @@ class PKK {
   /**
    * Query PKK feature info
    * @param {String} id feature id
-   * @returns {Promise<FeaturesResponse>} response
+   * @returns {Promise<Feature>} response
    * @example
    * pkk.getFeatureInfo('77:1:1013:4985');
    */
@@ -75,16 +75,40 @@ class PKK {
  * @property {number} extent.xmin
  * @property {number} extent.ymax
  * @property {number} extent.ymin
- * @property {number} sort
+ * @property {number} [sort]
  * @property {number} type
  */
 
 /**
  * Feature attributes
  * @typedef {Object} FeatureAttrs
- * @property {String} address
+ * @property {String} id feature id
  * @property {String} cn cadastral number
- * @property {String} id
+ * @property {String} address
+ * @property {String} [adate]
+ * @property {String} [anno_text]
+ * @property {String} [area_type]
+ * @property {String} [area_unit]
+ * @property {Number} [area_value]
+ * @property {Number} [cad_cost]
+ * @property {Object} [cad_eng_dat]
+ * @property {String} [cad_record_date]
+ * @property {String} [cad_unit]
+ * @property {String} [category_type]
+ * @property {String} [date_cost]
+ * @property {String} [date_create]
+ * @property {String} [kvartal]
+ * @property {String} [kvartal_cn]
+ * @property {String} [okrug]
+ * @property {String} [okrug_cn]
+ * @property {String} [pubdate]
+ * @property {String} [rayon]
+ * @property {String} [rayon_cn]
+ * @property {Number} [reg]
+ * @property {Number} [rights_reg]
+ * @property {String} [statecd]
+ * @property {String} [util_by_doc]
+ * @property {String} [util_code]
  */
 
 export default PKK;
