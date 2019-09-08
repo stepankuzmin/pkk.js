@@ -30,7 +30,7 @@ class PKK {
    * @param {Object} options query options
    * @param {Number} options.tolerance query tolerance
    * @param {Number} options.limit features query limit
-   * @returns {Promise<FeaturesResponse>} response
+   * @returns {Promise<Array<Features>>} response
    * @example
    * pkk.queryFeatures({ lng: 37.629, lat: 55.7252 }, { tolerance: 100, limit: 12 });
    */
@@ -41,17 +41,27 @@ class PKK {
       tolerance: options.tolerance,
     };
 
-    return this.axios.get(this.featuresURL, { params }).then((response) => response.data);
+    return this.axios.get(this.featuresURL, { params }).then((response) => {
+      const { data } = response;
+      return data.features;
+    });
+  };
+
+  /**
+   * Query PKK feature info
+   * @param {String} id feature id
+   * @returns {Promise<FeaturesResponse>} response
+   * @example
+   * pkk.getFeatureInfo('77:1:1013:4985');
+   */
+  getFeatureInfo = (id) => {
+    const featureURL = `${this.featuresURL}/${id}`;
+    return this.axios.get(featureURL).then((response) => {
+      const { data } = response;
+      return data.feature;
+    });
   };
 }
-
-/**
- * Features Response
- * @typedef {Object} FeaturesResponse
- * @property {Array<Feature>} features
- * @property {number} status
- * @property {number} total
- */
 
 /**
  * Feature
