@@ -1,5 +1,9 @@
 # pkk.js
 
+![npm](https://img.shields.io/npm/v/pkk)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/pkk)
+![npm](https://img.shields.io/npm/dt/pkk)
+
 JavaScript Client for Public Cadastral Map ([pkk5.rosreestr.ru](https://pkk5.rosreestr.ru))
 
 ## Install
@@ -17,8 +21,8 @@ const pkk = new PKK();
 
 pkk
   .queryFeatures({ lng: 37.629, lat: 55.7252 }, { tolerance: 100, limit: 12 })
-  .then((response) => {
-    const feature = response.features[0];
+  .then((features) => {
+    const feature = features[0];
     const featureInfo = pkk.getFeatureInfo(feature.id);
     return featureInfo;
   });
