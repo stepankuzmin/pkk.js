@@ -44,6 +44,12 @@
                         #queryFeatures
                       </a></li>
                       
+                      <li><a
+                        href='#pkkgetfeatureinfo'
+                        class='regular pre-open'>
+                        #getFeatureInfo
+                      </a></li>
+                      
                     </ul>
                   
                   
@@ -54,9 +60,9 @@
               
                 
                 <li><a
-                  href='#featuresresponse'
+                  href='#feature'
                   class="">
-                  FeaturesResponse
+                  Feature
                   
                 </a>
                 
@@ -64,9 +70,9 @@
               
                 
                 <li><a
-                  href='#feature'
+                  href='#featureattrs'
                   class="">
-                  Feature
+                  FeatureAttrs
                   
                 </a>
                 
@@ -297,7 +303,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#featuresresponse">FeaturesResponse</a>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Features>></code>:
         response
 
       
@@ -326,70 +332,41 @@
       </div>
     </div>
   
-</div>
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='featuresresponse'>
-      FeaturesResponse
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Features Response</p>
-
-    <div class='pre p1 fill-light mt0'>FeaturesResponse</div>
-  
-    <p>
-      Type:
-      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-    </p>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Properties</div>
-    <div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>features</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#feature">Feature</a>>)</code>
-          
-          
+    <div class='border-bottom' id='pkkgetfeatureinfo'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getFeatureInfo</span>
         </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Query PKK feature info</p>
+
+    <div class='pre p1 fill-light mt0'>getFeatureInfo</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
       
         <div class='space-bottom0'>
-          <span class='code bold'>status</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>total</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          
+          <div>
+            <span class='code bold'>id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    feature id
+
+          </div>
           
         </div>
       
@@ -399,10 +376,38 @@
   
 
   
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;FeaturesResponse></code>:
+        response
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>pkk.getFeatureInfo(<span class="hljs-string">'77:1:1013:4985'</span>);</pre>
+    
+  
+
+  
 
   
 
   
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
 
   
 
@@ -452,25 +457,8 @@
     <div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>attrs</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          <span class='code bold'>attrs</span> <code class='quiet'>(<a href="#featureattrs">FeatureAttrs</a>)</code>
           
-          
-            <ul>
-              
-                <li><code>attrs.address</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
-                  
-                  </li>
-              
-                <li><code>attrs.cn</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
-                  
-                  <p>cadastral number</p>
-</li>
-              
-                <li><code>attrs.id</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
-                  
-                  </li>
-              
-            </ul>
           
         </div>
       
@@ -526,6 +514,83 @@
       
         <div class='space-bottom0'>
           <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='featureattrs'>
+      FeatureAttrs
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Feature attributes</p>
+
+    <div class='pre p1 fill-light mt0'>FeatureAttrs</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>cn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+          : cadastral number
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
           
           
         </div>
