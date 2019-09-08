@@ -28,15 +28,17 @@ pkk
 
 #### Table of Contents
 
-- [PKK](#pkk)
-  - [Parameters](#parameters)
-  - [queryFeatures](#queryfeatures)
-    - [Parameters](#parameters-1)
-    - [Examples](#examples)
-- [FeaturesResponse](#featuresresponse)
-  - [Properties](#properties)
-- [Feature](#feature)
-  - [Properties](#properties-1)
+-   [PKK](#pkk)
+    -   [Parameters](#parameters)
+    -   [queryFeatures](#queryfeatures)
+        -   [Parameters](#parameters-1)
+        -   [Examples](#examples)
+-   [FeaturesResponse](#featuresresponse)
+    -   [Properties](#properties)
+-   [Feature](#feature)
+    -   [Properties](#properties-1)
+-   [FeatureAttrs](#featureattrs)
+    -   [Properties](#properties-2)
 
 ### PKK
 
@@ -44,9 +46,9 @@ PKK API Client
 
 #### Parameters
 
-- `config` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** client config (optional, default `{baseURL:'https://pkk5.rosreestr.ru/',featuresURL:'/api/features/1'}`)
-  - `config.baseURL` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** PKK base URL
-  - `config.featuresURL` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** PKK features API URL
+-   `config` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** client config (optional, default `{baseURL:'https://pkk5.rosreestr.ru/',featuresURL:'/api/features/1'}`)
+    -   `config.baseURL` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** PKK base URL
+    -   `config.featuresURL` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** PKK features API URL
 
 #### queryFeatures
 
@@ -54,12 +56,12 @@ Query PKK features near point
 
 ##### Parameters
 
-- `lnglat` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** longitude and latitude
-  - `lnglat.lng` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** longitude
-  - `lnglat.lat` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** latitude
-- `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** query options (optional, default `{tolerance:100,limit:12}`)
-  - `options.tolerance` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** query tolerance
-  - `options.limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** features query limit
+-   `lnglat` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** longitude and latitude
+    -   `lnglat.lng` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** longitude
+    -   `lnglat.lat` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** latitude
+-   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** query options (optional, default `{tolerance:100,limit:12}`)
+    -   `options.tolerance` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** query tolerance
+    -   `options.limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** features query limit
 
 ##### Examples
 
@@ -77,9 +79,9 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 #### Properties
 
-- `features` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Feature](#feature)>**
-- `status` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
-- `total` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+-   `features` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Feature](#feature)>** 
+-   `status` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `total` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 ### Feature
 
@@ -89,17 +91,26 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 #### Properties
 
-- `attrs` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
-  - `attrs.address` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
-  - `attrs.cn` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** cadastral number
-  - `attrs.id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
-- `center` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
-  - `center.x` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
-  - `center.y` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
-- `extent` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
-  - `extent.xmax` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
-  - `extent.xmin` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
-  - `extent.ymax` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
-  - `extent.ymin` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
-- `sort` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
-- `type` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+-   `attrs` **[FeatureAttrs](#featureattrs)** 
+-   `center` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `center.x` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+    -   `center.y` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `extent` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `extent.xmax` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+    -   `extent.xmin` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+    -   `extent.ymax` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+    -   `extent.ymin` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `sort` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `type` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+### FeatureAttrs
+
+Feature attributes
+
+Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+#### Properties
+
+-   `address` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `cn` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** cadastral number
+-   `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 

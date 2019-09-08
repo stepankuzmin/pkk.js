@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/stepankuzmin/pkk.js.git"
   },
-  "main": "index.js",
+  "main": "dist/pkk.cjs.js",
+  "module": "dist/pkk.esm.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "cz": "git-cz",
     "lint": "eslint src",
@@ -20,6 +24,7 @@
     "doc:api": "documentation readme src/index.js --section=API",
     "doc:site": "documentation build src/index.js -f html -o docs",
     "test": "jest",
+    "build": "rollup --config",
     "deploy": "gh-pages -d docs",
     "postpublish": "npm run build && npm run doc && npm run deploy"
   },
@@ -40,6 +45,12 @@
     "eslint-plugin-import": "2.18.2",
     "gh-pages": "2.1.1",
     "jest": "24.9.0",
+    "rollup": "1.21.0",
+    "rollup-plugin-babel": "4.3.3",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-json": "4.0.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-terser": "5.1.1",
     "standard-version": "7.0.0"
   },
   "config": {

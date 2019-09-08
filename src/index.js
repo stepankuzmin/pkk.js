@@ -56,10 +56,7 @@ class PKK {
 /**
  * Feature
  * @typedef {Object} Feature
- * @property {Object} attrs
- * @property {String} attrs.address
- * @property {String} attrs.cn cadastral number
- * @property {String} attrs.id
+ * @property {FeatureAttrs} attrs
  * @property {Object} center
  * @property {number} center.x
  * @property {number} center.y
@@ -70,6 +67,14 @@ class PKK {
  * @property {number} extent.ymin
  * @property {number} sort
  * @property {number} type
+ */
+
+/**
+ * Feature attributes
+ * @typedef {Object} FeatureAttrs
+ * @property {String} address
+ * @property {String} cn cadastral number
+ * @property {String} id
  */
 
 export default PKK;
