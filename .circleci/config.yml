@@ -28,5 +28,5 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run lint
-      - run: npm run test
+      - run: npm run test -- --forceExit --detectOpenHandles --maxWorkers=10
       - run: npm run build
