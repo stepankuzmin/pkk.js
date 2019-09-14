@@ -23,7 +23,7 @@ pkk
   .queryFeatures({ lng: 37.629, lat: 55.7252 }, { tolerance: 100, limit: 12 })
   .then((features) => {
     const feature = features[0];
-    const featureInfo = pkk.getFeatureInfo(feature.id);
+    const featureInfo = pkk.getFeatureInfo(feature.attrs.id);
     return featureInfo;
   });
 ```
