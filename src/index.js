@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { FEATURE_TYPES } from './constants';
 
 const defaultConfig = {
   baseURL: 'https://pkk5.rosreestr.ru/',
@@ -87,54 +86,5 @@ class PKK {
   };
 }
 
-/**
- * Feature
- * @typedef {Object} Feature
- * @property {FeatureAttrs} attrs
- * @property {Object} center
- * @property {number} center.x
- * @property {number} center.y
- * @property {Object} extent
- * @property {number} extent.xmax
- * @property {number} extent.xmin
- * @property {number} extent.ymax
- * @property {number} extent.ymin
- * @property {number} [sort]
- * @property {number} type
- */
-
-/**
- * Feature attributes
- * @typedef {Object} FeatureAttrs
- * @property {String} id feature id
- * @property {String} cn cadastral number
- * @property {String} address
- * @property {String} [adate]
- * @property {String} [anno_text]
- * @property {String} [area_type]
- * @property {String} [area_unit]
- * @property {Number} [area_value]
- * @property {Number} [cad_cost]
- * @property {Object} [cad_eng_dat]
- * @property {String} [cad_record_date]
- * @property {String} [cad_unit]
- * @property {String} [category_type]
- * @property {String} [date_cost]
- * @property {String} [date_create]
- * @property {String} [kvartal]
- * @property {String} [kvartal_cn]
- * @property {String} [okrug]
- * @property {String} [okrug_cn]
- * @property {String} [pubdate]
- * @property {String} [rayon]
- * @property {String} [rayon_cn]
- * @property {Number} [reg]
- * @property {Number} [rights_reg]
- * @property {String} [statecd]
- * @property {String} [util_by_doc]
- * @property {String} [util_code]
- */
-
 export default PKK;
-
-export { FEATURE_TYPES };
+export * from './constants';
