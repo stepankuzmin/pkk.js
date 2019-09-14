@@ -1,8 +1,9 @@
 # pkk.js
 
+[![Build Status](https://img.shields.io/circleci/project/github/stepankuzmin/pkk.js.svg?style=popout)](https://circleci.com/gh/stepankuzmin/pkk.js)
 ![npm](https://img.shields.io/npm/v/pkk)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/pkk)
 ![npm](https://img.shields.io/npm/dt/pkk)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/pkk)
 
 JavaScript Client for Public Cadastral Map ([pkk5.rosreestr.ru](https://pkk5.rosreestr.ru))
 
