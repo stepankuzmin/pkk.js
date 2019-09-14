@@ -195,3 +195,6 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
     -   `FEATURE_TYPES.BOUNDARY_REFERENCE_NETWORK` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** ОМС
     -   `FEATURE_TYPES.USE_RESTRICTED_ZONE` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** ЗОУИТы
     -   `FEATURE_TYPES.FORESTRY` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Лесничества и лесопарки
+    -   `FEATURE_TYPES.BUILDING_LINE` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Красные линии
+    -   `FEATURE_TYPES.LAND_PLOT_LAYOUT` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Схемы расположения ЗУ
+    -   `FEATURE_TYPES.FREE_ECONOMIC_ZONE` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Свободные экономические зоны

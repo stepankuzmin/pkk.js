@@ -68,8 +68,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "npm run lint -- --fix",
-      "npm run test -- --passWithNoTests",
+      "eslint --fix",
+      "jest --bail --findRelatedTests",
       "git add"
     ]
   },
