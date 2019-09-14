@@ -16,15 +16,19 @@ npm install pkk
 ## Usage
 
 ```js
-import PKK from 'pkk';
+import PKK, { FEATURE_TYPES } from 'pkk';
 
 const pkk = new PKK();
 
 pkk
-  .queryFeatures({ lng: 37.629, lat: 55.7252 }, { tolerance: 100, limit: 12 })
+  .queryFeatures(
+    FEATURE_TYPES.LAND_PLOT,
+    { lng: 37.629, lat: 55.7252 },
+    { tolerance: 100, limit: 12 }
+  )
   .then((features) => {
     const feature = features[0];
-    const featureInfo = pkk.getFeatureInfo(feature.attrs.id);
+    const featureInfo = pkk.getFeatureInfo(FEATURE_TYPES.LAND_PLOT, feature.attrs.id);
     return featureInfo;
   });
 ```
