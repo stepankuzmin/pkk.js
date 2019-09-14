@@ -45,7 +45,9 @@
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "2.18.2",
     "gh-pages": "2.1.1",
+    "husky": "3.0.5",
     "jest": "24.9.0",
+    "lint-staged": "9.2.5",
     "rollup": "1.21.2",
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-commonjs": "10.1.0",
@@ -58,6 +60,18 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "jest --findRelatedTests",
+      "git add"
+    ]
   },
   "keywords": [
     "rosreestr",
