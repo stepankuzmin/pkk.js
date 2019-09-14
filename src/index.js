@@ -65,6 +65,7 @@ class PKK {
 
   /**
    * Query PKK feature info
+   * @param {Number} typeId feature type id
    * @param {String} id feature id
    * @returns {Promise<Feature>} response
    * @example
