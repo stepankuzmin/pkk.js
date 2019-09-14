@@ -1,25 +1,28 @@
 import axios from 'axios';
 
+const defaultConfig = {
+  baseURL: 'https://pkk5.rosreestr.ru/',
+  featuresURL: '/api/features/1',
+  referer: false,
+};
+
 /**
  * PKK API Client
  * @param {Object} config client config
- * @param {String} config.baseURL PKK base URL
- * @param {String} config.featuresURL PKK features API URL
+ * @param {String} [config.baseURL='https://pkk5.rosreestr.ru/'] PKK base URL
+ * @param {String} [config.featuresURL='/api/features/1'] PKK features API URL
+ * @param {Boolean|String} [config.referer=false] referer header
  */
 class PKK {
-  constructor(
-    config = {
-      baseURL: 'https://pkk5.rosreestr.ru/',
-      featuresURL: '/api/features/1',
-    },
-  ) {
-    this.baseURL = config.baseURL;
-    this.featuresURL = config.featuresURL;
+  constructor(config = defaultConfig) {
+    this.config = { ...defaultConfig, ...config };
 
-    this.axios = axios.create({
-      baseURL: config.baseURL,
-      headers: { referer: config.baseURL },
-    });
+    const headers = {};
+    if (this.config.referer) {
+      headers.referer = typeof this.config.referer === 'string' ? this.config.referer : this.config.baseURL;
+    }
+
+    this.axios = axios.create({ baseURL: this.config.baseURL, headers });
   }
 
   /**
@@ -41,7 +44,7 @@ class PKK {
       tolerance: options.tolerance,
     };
 
-    return this.axios.get(this.featuresURL, { params }).then((response) => {
+    return this.axios.get(this.config.featuresURL, { params }).then((response) => {
       const { data } = response;
       return data.features;
     });
@@ -55,7 +58,7 @@ class PKK {
    * pkk.getFeatureInfo('77:1:1013:4985');
    */
   getFeatureInfo = (id) => {
-    const featureURL = `${this.featuresURL}/${id}`;
+    const featureURL = `${this.config.featuresURL}/${id}`;
     return this.axios.get(featureURL).then((response) => {
       const { data } = response;
       return data.feature;

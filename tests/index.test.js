@@ -3,7 +3,8 @@ import PKK from '../src';
 test('Features query', async () => {
   expect.assertions(1);
 
-  const pkk = new PKK();
+  const pkk = new PKK({ referer: true });
+
   const response = await pkk.queryFeatures(
     { lng: 37.629, lat: 55.7252 },
     { tolerance: 100, limit: 12 },
@@ -37,7 +38,7 @@ test('Features query', async () => {
 test('Feature info query', async () => {
   expect.assertions(1);
 
-  const pkk = new PKK();
+  const pkk = new PKK({ referer: true });
   const response = await pkk.getFeatureInfo('77:1:1013:4985');
 
   expect(response).toMatchObject({
