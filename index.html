@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'>
-  <title>pkk 0.1.0 | Documentation</title>
+  <title>pkk 0.2.0 | Documentation</title>
   <meta name='description' content='JavaScript Client for Public Cadastral Map (pkk5.rosreestr.ru)'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>pkk</h3>
-          <div class='mb1'><code>0.1.0</code></div>
+          <div class='mb1'><code>0.2.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -78,6 +78,16 @@
                 
                 </li>
               
+                
+                <li><a
+                  href='#feature_types'
+                  class="">
+                  FEATURE_TYPES
+                  
+                </a>
+                
+                </li>
+              
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
@@ -121,7 +131,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>config</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-            = <code>{baseURL:&#39;https://pkk5.rosreestr.ru/&#39;,featuresURL:&#39;/api/features/1&#39;}</code>)</code>
+            = <code>defaultConfig</code>)</code>
 	    client config
 
           </div>
@@ -141,6 +151,8 @@
               
                 <tr>
   <td class='break-word'><span class='code bold'>config.baseURL</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  
+    (default <code>&#39;https://pkk5.rosreestr.ru/&#39;</code>)
   </td>
   <td class='break-word'><span>PKK base URL
 </span></td>
@@ -150,8 +162,21 @@
               
                 <tr>
   <td class='break-word'><span class='code bold'>config.featuresURL</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  
+    (default <code>&#39;/api/features/&#39;</code>)
   </td>
   <td class='break-word'><span>PKK features API URL
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>config.referer</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+  
+    (default <code>false</code>)
+  </td>
+  <td class='break-word'><span>referer header
 </span></td>
 </tr>
 
@@ -207,6 +232,15 @@
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>typeId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    feature type id
+
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -316,7 +350,17 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>pkk.queryFeatures({ <span class="hljs-attr">lng</span>: <span class="hljs-number">37.629</span>, <span class="hljs-attr">lat</span>: <span class="hljs-number">55.7252</span> }, { <span class="hljs-attr">tolerance</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">limit</span>: <span class="hljs-number">12</span> });</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> PKK, { FEATURE_TYPES } <span class="hljs-keyword">from</span> <span class="hljs-string">'pkk'</span>;
+
+<span class="hljs-keyword">const</span> pkk = <span class="hljs-keyword">new</span> PKK();
+
+pkk.queryFeatures(
+  FEATURE_TYPES.LAND_PLOT,
+  { <span class="hljs-attr">lng</span>: <span class="hljs-number">37.629</span>, <span class="hljs-attr">lat</span>: <span class="hljs-number">55.7252</span> },
+  { <span class="hljs-attr">tolerance</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">limit</span>: <span class="hljs-number">12</span> }
+).then(<span class="hljs-function"><span class="hljs-params">features</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(features);
+});</pre>
     
   
 
@@ -363,6 +407,23 @@
       
         <div class='space-bottom0'>
           <div>
+            <span class='code bold'>typeId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    feature type id
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>featureId</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
             <span class='code bold'>id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
 	    feature id
 
@@ -391,7 +452,14 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>pkk.getFeatureInfo(<span class="hljs-string">'77:1:1013:4985'</span>);</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> PKK, { FEATURE_TYPES } <span class="hljs-keyword">from</span> <span class="hljs-string">'pkk'</span>;
+
+<span class="hljs-keyword">const</span> pkk = <span class="hljs-keyword">new</span> PKK();
+
+pkk.getFeatureInfo(FEATURE_TYPES.LAND_PLOT, <span class="hljs-string">'77:1:1013:4985'</span>)
+  .then(<span class="hljs-function"><span class="hljs-params">featureInfo</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(featureInfo);
+  });</pre>
     
   
 
@@ -741,6 +809,201 @@
         </div>
       
     </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='feature_types'>
+      FEATURE_TYPES
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Типы объектов</p>
+
+    <div class='pre p1 fill-light mt0'>FEATURE_TYPES</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>FEATURE_TYPES</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    Типы объектов
+
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.LAND_PLOT</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>Земельные участки
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.LAND_QUARTER</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>Кварталы
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.LAND_AREA</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>Районы
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.LAND_DISTRICT</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>Округи
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.CCO</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>ОКСы
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.TERRITORIAL_AREA</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>Территориальные зоны
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.BOUNDARY</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>Границы
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.BOUNDARY_REFERENCE_NETWORK</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>ОМС
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.USE_RESTRICTED_ZONE</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>ЗОУИТы
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.FORESTRY</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>Лесничества и лесопарки
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.BUILDING_LINE</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>Красные линии
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.LAND_PLOT_LAYOUT</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>Схемы расположения ЗУ
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>FEATURE_TYPES.FREE_ECONOMIC_ZONE</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>Свободные экономические зоны
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
   
 
   
