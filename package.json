@@ -1,6 +1,6 @@
 {
   "name": "pkk",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "JavaScript Client for Public Cadastral Map (pkk5.rosreestr.ru)",
   "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.com)",
   "license": "BSD-2-Clause",
