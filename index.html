@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'>
-  <title>pkk 0.2.0 | Documentation</title>
+  <title>pkk 0.2.1 | Documentation</title>
   <meta name='description' content='JavaScript Client for Public Cadastral Map (pkk5.rosreestr.ru)'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>pkk</h3>
-          <div class='mb1'><code>0.2.0</code></div>
+          <div class='mb1'><code>0.2.1</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -68,7 +68,17 @@
                 <li><a
                   href='#feature'
                   class="">
-                  FEATURE
+                  Feature
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#featureattributes'
+                  class="">
+                  FeatureAttributes
                   
                 </a>
                 
@@ -79,16 +89,6 @@
                   href='#feature_types'
                   class="">
                   FEATURE_TYPES
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#feature_attributes'
-                  class="">
-                  FEATURE_ATTRIBUTES
                   
                 </a>
                 
@@ -354,7 +354,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Features>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#feature">Feature</a>>></code>:
         response
 
       
@@ -433,15 +433,7 @@ pkk.queryFeatures(
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>featureId</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>featureId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
 	    feature id
 
           </div>
@@ -456,7 +448,7 @@ pkk.queryFeatures(
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;Feature></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#feature">Feature</a>></code>:
         response
 
       
@@ -523,7 +515,7 @@ pkk.getFeatureInfo(FEATURE_TYPES.LAND_LOT, <span class="hljs-string">'77:1:1013:
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>featureInfo</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            <span class='code bold'>featureInfo</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
             = <code>{}</code>)</code>
 	    feature info
 
@@ -593,7 +585,7 @@ pkk.getFeatureInfo(FEATURE_TYPES.LAND_LOT, <span class="hljs-string">'77:1:1013:
   <div class='clearfix'>
     
     <h3 class='fl m0' id='feature'>
-      FEATURE
+      Feature
     </h3>
     
     
@@ -602,7 +594,7 @@ pkk.getFeatureInfo(FEATURE_TYPES.LAND_LOT, <span class="hljs-string">'77:1:1013:
 
   <p>Объект</p>
 
-    <div class='pre p1 fill-light mt0'>FEATURE</div>
+    <div class='pre p1 fill-light mt0'>Feature</div>
   
     <p>
       Type:
@@ -632,7 +624,7 @@ pkk.getFeatureInfo(FEATURE_TYPES.LAND_LOT, <span class="hljs-string">'77:1:1013:
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>attrs</span> <code class='quiet'>(<a href="#feature_attributes">FEATURE_ATTRIBUTES</a>)</code>
+          <span class='code bold'>attrs</span> <code class='quiet'>(<a href="#featureattributes">FeatureAttributes</a>)</code>
           : Cписок атрибутов
 
           
@@ -678,157 +670,8 @@ pkk.getFeatureInfo(FEATURE_TYPES.LAND_LOT, <span class="hljs-string">'77:1:1013:
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='feature_types'>
-      FEATURE_TYPES
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Типы объектов</p>
-
-    <div class='pre p1 fill-light mt0'>FEATURE_TYPES</div>
-  
-    <p>
-      Type:
-      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-    </p>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Properties</div>
-    <div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>LAND_LOT</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : Земельные участки (1)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>LAND_QUARTER</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : Кварталы (2)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>LAND_AREA</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : Районы (3)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>LAND_DISTRICT</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : Округи (4)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>CCO</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : ОКСы (5)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>TERRITORIAL_AREA</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : Территориальные зоны (6)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>BOUNDARY</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : Границы (7)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>BOUNDARY_REFERENCE_NETWORK</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : ОМС (9)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>USE_RESTRICTED_ZONE</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : ЗОУИТы (10)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>FORESTRY</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : Лесничества и лесопарки (12)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>BUILDING_LINE</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : Красные линии (13)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>LAND_LOT_LAYOUT</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : Схемы расположения ЗУ (15)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>FREE_ECONOMIC_ZONE</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : Свободные экономические зоны (16)
-
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='feature_attributes'>
-      FEATURE_ATTRIBUTES
+    <h3 class='fl m0' id='featureattributes'>
+      FeatureAttributes
     </h3>
     
     
@@ -837,7 +680,7 @@ pkk.getFeatureInfo(FEATURE_TYPES.LAND_LOT, <span class="hljs-string">'77:1:1013:
 
   <p>Cписок атрибутов</p>
 
-    <div class='pre p1 fill-light mt0'>FEATURE_ATTRIBUTES</div>
+    <div class='pre p1 fill-light mt0'>FeatureAttributes</div>
   
     <p>
       Type:
@@ -1121,6 +964,155 @@ pkk.getFeatureInfo(FEATURE_TYPES.LAND_LOT, <span class="hljs-string">'77:1:1013:
         <div class='space-bottom0'>
           <span class='code bold'>cc_date_approval</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
           : Дата утверждения категории земель
+
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='feature_types'>
+      FEATURE_TYPES
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Типы объектов</p>
+
+    <div class='pre p1 fill-light mt0'>FEATURE_TYPES</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>LAND_LOT</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Земельные участки (1)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>LAND_QUARTER</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Кварталы (2)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>LAND_AREA</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Районы (3)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>LAND_DISTRICT</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Округи (4)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>CCO</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : ОКСы (5)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>TERRITORIAL_AREA</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Территориальные зоны (6)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>BOUNDARY</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Границы (7)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>BOUNDARY_REFERENCE_NETWORK</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : ОМС (9)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>USE_RESTRICTED_ZONE</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : ЗОУИТы (10)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>FORESTRY</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Лесничества и лесопарки (12)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>BUILDING_LINE</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Красные линии (13)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>LAND_LOT_LAYOUT</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Схемы расположения ЗУ (15)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>FREE_ECONOMIC_ZONE</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Свободные экономические зоны (16)
 
           
         </div>
