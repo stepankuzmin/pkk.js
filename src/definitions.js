@@ -2,33 +2,16 @@
 
 /**
  * Объект
- * @typedef {Object} FEATURE
+ * @typedef {Object} Feature
  * @property {number} type Тип объекта
- * @property {FEATURE_ATTRIBUTES} attrs Cписок атрибутов
+ * @property {FeatureAttributes} attrs Cписок атрибутов
  * @property {{x: number, y: number}} center Центр объекта
  * @property {{xmax: number, xmin: number, ymax: number, ymin: number}} extent Экстент объекта
  */
 
 /**
- * Типы объектов
- * @typedef {Object} FEATURE_TYPES
- * @property {number} LAND_LOT Земельные участки (1)
- * @property {number} LAND_QUARTER Кварталы (2)
- * @property {number} LAND_AREA Районы (3)
- * @property {number} LAND_DISTRICT Округи (4)
- * @property {number} CCO ОКСы (5)
- * @property {number} TERRITORIAL_AREA Территориальные зоны (6)
- * @property {number} BOUNDARY Границы (7)
- * @property {number} BOUNDARY_REFERENCE_NETWORK ОМС (9)
- * @property {number} USE_RESTRICTED_ZONE ЗОУИТы (10)
- * @property {number} FORESTRY Лесничества и лесопарки (12)
- * @property {number} BUILDING_LINE Красные линии (13)
- * @property {number} LAND_LOT_LAYOUT Схемы расположения ЗУ (15)
- * @property {number} FREE_ECONOMIC_ZONE Свободные экономические зоны (16)
- */
-/**
  * Cписок атрибутов
- * @typedef {Object} FEATURE_ATTRIBUTES
+ * @typedef {Object} FeatureAttributes
  * @property {String} id Идентификатор
  * @property {String} cn Кадастровый номер
  * @property {String} statecd Статус
@@ -67,4 +50,22 @@
  * @property {String} util_by_doc Разрешенное использование по документу
  * @property {String} util_code Разрешенное использование
  * @property {String} cc_date_approval Дата утверждения категории земель
+ */
+
+/**
+ * Типы объектов
+ * @typedef {Object} FEATURE_TYPES
+ * @property {number} LAND_LOT Земельные участки (1)
+ * @property {number} LAND_QUARTER Кварталы (2)
+ * @property {number} LAND_AREA Районы (3)
+ * @property {number} LAND_DISTRICT Округи (4)
+ * @property {number} CCO ОКСы (5)
+ * @property {number} TERRITORIAL_AREA Территориальные зоны (6)
+ * @property {number} BOUNDARY Границы (7)
+ * @property {number} BOUNDARY_REFERENCE_NETWORK ОМС (9)
+ * @property {number} USE_RESTRICTED_ZONE ЗОУИТы (10)
+ * @property {number} FORESTRY Лесничества и лесопарки (12)
+ * @property {number} BUILDING_LINE Красные линии (13)
+ * @property {number} LAND_LOT_LAYOUT Схемы расположения ЗУ (15)
+ * @property {number} FREE_ECONOMIC_ZONE Свободные экономические зоны (16)
  */

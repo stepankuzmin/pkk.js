@@ -42,7 +42,7 @@ class PKK {
    * @param {Object} options query options
    * @param {Number} options.tolerance query tolerance
    * @param {Number} options.limit features query limit
-   * @returns {Promise<Array<Features>>} response
+   * @returns {Promise<Array<Feature>>} response
    * @example
    * import PKK, { FEATURE_TYPES } from 'pkk';
    *
@@ -77,7 +77,7 @@ class PKK {
   /**
    * Query PKK feature info
    * @param {Number} typeId feature type id
-   * @param {String} id feature id
+   * @param {String} featureId feature id
    * @returns {Promise<Feature>} response
    * @example
    * import PKK, { FEATURE_TYPES } from 'pkk';
@@ -103,7 +103,7 @@ class PKK {
 
   /**
    * Formats feature info with i18n labels
-   * @param {Number} featureInfo feature info
+   * @param {Object} featureInfo feature info
    * @returns {Object} featureInfo translated feature info
    * @example
    * import PKK, { FEATURE_TYPES } from 'pkk';

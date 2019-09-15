@@ -53,11 +53,11 @@ pkk
     -   [formatFeatureInfo](#formatfeatureinfo)
         -   [Parameters](#parameters-3)
         -   [Examples](#examples-2)
--   [FEATURE](#feature)
+-   [Feature](#feature)
     -   [Properties](#properties)
--   [FEATURE_TYPES](#feature_types)
+-   [FeatureAttributes](#featureattributes)
     -   [Properties](#properties-1)
--   [FEATURE_ATTRIBUTES](#feature_attributes)
+-   [FEATURE_TYPES](#feature_types)
     -   [Properties](#properties-2)
 
 ### PKK
@@ -102,7 +102,7 @@ pkk.queryFeatures(
 });
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;Features>>** response
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Feature](#feature)>>** response
 
 #### getFeatureInfo
 
@@ -111,8 +111,7 @@ Query PKK feature info
 ##### Parameters
 
 -   `typeId` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** feature type id
--   `featureId`  
--   `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** feature id
+-   `featureId` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** feature id
 
 ##### Examples
 
@@ -127,7 +126,7 @@ pkk.getFeatureInfo(FEATURE_TYPES.LAND_LOT, '77:1:1013:4985')
   });
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;Feature>** response
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Feature](#feature)>** response
 
 #### formatFeatureInfo
 
@@ -135,7 +134,7 @@ Formats feature info with i18n labels
 
 ##### Parameters
 
--   `featureInfo` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** feature info (optional, default `{}`)
+-   `featureInfo` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** feature info (optional, default `{}`)
 
 ##### Examples
 
@@ -152,7 +151,7 @@ pkk.getFeatureInfo(FEATURE_TYPES.LAND_LOT, '77:1:1013:4985')
 
 Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** featureInfo translated feature info
 
-### FEATURE
+### Feature
 
 Объект
 
@@ -161,33 +160,11 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 #### Properties
 
 -   `type` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Тип объекта
--   `attrs` **[FEATURE_ATTRIBUTES](#feature_attributes)** Cписок атрибутов
+-   `attrs` **[FeatureAttributes](#featureattributes)** Cписок атрибутов
 -   `center` **{x: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), y: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}** Центр объекта
 -   `extent` **{xmax: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), xmin: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), ymax: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), ymin: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}** Экстент объекта
 
-### FEATURE_TYPES
-
-Типы объектов
-
-Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
-
-#### Properties
-
--   `LAND_LOT` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Земельные участки (1)
--   `LAND_QUARTER` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Кварталы (2)
--   `LAND_AREA` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Районы (3)
--   `LAND_DISTRICT` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Округи (4)
--   `CCO` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** ОКСы (5)
--   `TERRITORIAL_AREA` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Территориальные зоны (6)
--   `BOUNDARY` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Границы (7)
--   `BOUNDARY_REFERENCE_NETWORK` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** ОМС (9)
--   `USE_RESTRICTED_ZONE` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** ЗОУИТы (10)
--   `FORESTRY` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Лесничества и лесопарки (12)
--   `BUILDING_LINE` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Красные линии (13)
--   `LAND_LOT_LAYOUT` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Схемы расположения ЗУ (15)
--   `FREE_ECONOMIC_ZONE` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Свободные экономические зоны (16)
-
-### FEATURE_ATTRIBUTES
+### FeatureAttributes
 
 Cписок атрибутов
 
@@ -233,3 +210,25 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 -   `util_by_doc` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Разрешенное использование по документу
 -   `util_code` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Разрешенное использование
 -   `cc_date_approval` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Дата утверждения категории земель
+
+### FEATURE_TYPES
+
+Типы объектов
+
+Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+#### Properties
+
+-   `LAND_LOT` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Земельные участки (1)
+-   `LAND_QUARTER` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Кварталы (2)
+-   `LAND_AREA` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Районы (3)
+-   `LAND_DISTRICT` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Округи (4)
+-   `CCO` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** ОКСы (5)
+-   `TERRITORIAL_AREA` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Территориальные зоны (6)
+-   `BOUNDARY` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Границы (7)
+-   `BOUNDARY_REFERENCE_NETWORK` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** ОМС (9)
+-   `USE_RESTRICTED_ZONE` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** ЗОУИТы (10)
+-   `FORESTRY` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Лесничества и лесопарки (12)
+-   `BUILDING_LINE` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Красные линии (13)
+-   `LAND_LOT_LAYOUT` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Схемы расположения ЗУ (15)
+-   `FREE_ECONOMIC_ZONE` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Свободные экономические зоны (16)
