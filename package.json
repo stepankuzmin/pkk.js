@@ -20,8 +20,8 @@
   "scripts": {
     "cz": "git-cz",
     "lint": "eslint src",
-    "docgen": "babel-node src/docgen.js",
-    "doc": "npm run doc:api && npm run doc:site",
+    "doc": "npm run doc:gen && npm run doc:api && npm run doc:site",
+    "doc:gen": "babel-node src/docgen.js",
     "doc:api": "documentation readme src/index.js --section=API",
     "doc:site": "documentation build src/index.js -f html -o docs",
     "test": "jest",

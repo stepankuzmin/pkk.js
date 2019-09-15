@@ -57,5 +57,4 @@ feature(output);
 featureTypes(output);
 featureAttrs(output);
 
-output.write('\n');
 output.close();
