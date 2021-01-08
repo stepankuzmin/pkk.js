@@ -31,7 +31,7 @@
     "postpublish": "npm run doc && npm run deploy"
   },
   "dependencies": {
-    "axios": "0.19.0",
+    "axios": "0.21.1",
     "node-polyglot": "2.4.0"
   },
   "devDependencies": {
