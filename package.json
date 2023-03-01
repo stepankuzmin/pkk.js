@@ -41,7 +41,7 @@
     "@babel/preset-env": "7.6.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
-    "commitizen": "4.0.3",
+    "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.0.2",
     "documentation": "12.1.2",
     "eslint": "6.4.0",
